@@ -68,6 +68,7 @@ const deleteTask = async (req, res) => {
 
     return res.status(200).json({
       success: true,
+      data: deletedTask,
       message: "Task deleted successfully",
     });
   } catch (error) {

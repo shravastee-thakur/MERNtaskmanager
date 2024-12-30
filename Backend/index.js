@@ -9,8 +9,15 @@ const PORT = process.env.PORT || 3000;
 
 const taskRouter = require("./Routes/taskRoutes");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 
 // middlewares
+app.use(
+  cors({
+    origin: "http://localhost:5173", // Update to your frontend URL
+    credentials: true, // Allow cookies to be sent with requests
+  })
+);
 app.use(bodyParser.json());
 
 // routes
